@@ -16,8 +16,12 @@ export const SITE = {
   // TODO(phase 5): replace with the live Amazon US listing.
   amazonUrl: "https://www.amazon.com/dp/PLACEHOLDER",
 
-  // TODO(phase 6): the address that receives access and deletion requests.
-  contactEmail: "privacy@example.com",
+  /**
+   * Receives access and deletion requests. Personal for now, deliberately:
+   * a working address beats a tidy one that nobody reads. Swap for
+   * privacy@<domain> once the domain exists.
+   */
+  contactEmail: "djoeri9@hotmail.com",
 
   /**
    * Phase 4 turns this on together with the ESP integration. While it is false
