@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
  * No pulsing, no red, and deliberately the same colour at every band: green is
  * the book's accent, not a verdict. How exposed you are is said in words.
  */
-const STROKE = "#8cc63f";
-const TRACK = "#272a27";
+const STROKE = "#9bbc2d";
+const TRACK = "#262922";
 
 const RADIUS = 84;
 const CIRCUMFERENCE = Math.PI * RADIUS; // half circle

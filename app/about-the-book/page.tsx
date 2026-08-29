@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 
@@ -18,6 +19,18 @@ export default function BookPage() {
         Starve <span className="text-acid-500">The Machine</span>
       </h1>
       <p className="mt-3 text-ash-400">{SITE.author}</p>
+
+      {/* The cover does more selling than three paragraphs can. */}
+      <div className="mt-10 sm:float-right sm:ml-8 sm:mb-6 max-w-[240px]">
+        <Image
+          src="/starve-the-machine-cover.jpg"
+          alt={`Cover of ${SITE.bookTitle} by ${SITE.author}`}
+          width={800}
+          height={1280}
+          priority
+          className="w-full h-auto rounded-sm border border-ink-700"
+        />
+      </div>
 
       <div className="mt-10 space-y-5 text-ash-200 leading-relaxed">
         <p>

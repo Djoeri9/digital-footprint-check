@@ -19,7 +19,7 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#0a0a0a",
+          backgroundColor: "#070707",
           padding: "72px 80px",
           color: "#eceeec",
         }}
@@ -37,7 +37,7 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-          <div style={{ display: "flex", width: 96, height: 4, backgroundColor: "#8cc63f" }} />
+          <div style={{ display: "flex", width: 96, height: 4, backgroundColor: "#9bbc2d" }} />
           <div style={{ display: "flex", fontSize: 68, lineHeight: 1.15, maxWidth: 940 }}>
             You know roughly what you share. Most people are off by a category
             or two.
