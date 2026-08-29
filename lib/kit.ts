@@ -40,6 +40,14 @@ export async function subscribe(opts: {
   score: number;
   band: string;
   newsletter: boolean;
+  /**
+   * The heaviest of the four categories, so the report email can say something
+   * specific rather than repeating the four headings back. Derived from the
+   * answers in the browser; the answers themselves still never leave it.
+   */
+  topCategory: string;
+  topReading: string;
+  topStep: string;
 }): Promise<KitResult> {
   const apiKey = process.env.KIT_API_KEY;
   const toolTag = process.env.KIT_TAG_ID;
@@ -63,6 +71,9 @@ export async function subscribe(opts: {
         fields: {
           footprint_score: String(opts.score),
           footprint_band: opts.band,
+          footprint_top_category: opts.topCategory,
+          footprint_top_reading: opts.topReading,
+          footprint_top_step: opts.topStep,
         },
       }),
     });

@@ -6,10 +6,13 @@ import { SITE } from "@/lib/site";
 
 type Props = {
   score: number;
+  /** Which category came out heaviest, so the report email can be specific. */
+  topCategory: string;
+  topBand: string;
   onDone: () => void;
 };
 
-export function EmailGate({ score, onDone }: Props) {
+export function EmailGate({ score, topCategory, topBand, onDone }: Props) {
   const [email, setEmail] = useState("");
   const [newsletter, setNewsletter] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
@@ -24,7 +27,13 @@ export function EmailGate({ score, onDone }: Props) {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, score, newsletter }),
+        body: JSON.stringify({
+          email,
+          score,
+          newsletter,
+          topCategory,
+          topBand,
+        }),
       });
       const data = await res.json();
 
@@ -53,9 +62,10 @@ export function EmailGate({ score, onDone }: Props) {
       </h1>
 
       <p className="mt-5 text-ash-200 leading-relaxed">
-        We email you a copy of your score and the four category breakdowns, so
-        you have it after this tab closes. To do that we store two things: this
-        address and the number. Not your individual answers.
+        We email you your score, the category it came out heaviest in, and the
+        one change that buys you the most, so you have it after this tab
+        closes. To do that we store three things: this address, the number, and
+        which category came top. Not your individual answers.
       </p>
 
       <form onSubmit={handleSubmit} className="mt-8 space-y-5">

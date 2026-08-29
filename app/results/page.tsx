@@ -65,7 +65,15 @@ export default function ResultsPage() {
   }
 
   if (SITE.emailCaptureEnabled && !gateCleared) {
-    return <EmailGate score={result.score} onDone={clearGate} />;
+    const top = [...result.categories].sort((a, b) => b.score - a.score)[0];
+    return (
+      <EmailGate
+        score={result.score}
+        topCategory={top.id}
+        topBand={top.band}
+        onDone={clearGate}
+      />
+    );
   }
 
   return (

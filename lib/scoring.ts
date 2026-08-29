@@ -159,6 +159,23 @@ const CATEGORY_COPY: Record<
   },
 };
 
+/**
+ * Looks up the copy for one category and band. The API route uses this rather
+ * than trusting text posted from the browser: the client says which category
+ * came out heaviest, the server decides what that means.
+ */
+export function categoryDetail(
+  id: CategoryId,
+  band: BandId
+): { label: string; reading: string; firstStep: string } | null {
+  if (!(id in CATEGORY_COPY) || !(band in BANDS)) return null;
+  return {
+    label: CATEGORIES[id].label,
+    reading: CATEGORY_COPY[id].reading[band],
+    firstStep: CATEGORY_COPY[id].firstStep[band],
+  };
+}
+
 export function isComplete(answers: Answers): boolean {
   return QUESTIONS.every((q) => Boolean(answers[q.id]));
 }

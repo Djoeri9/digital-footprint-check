@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { subscribe } from "@/lib/kit";
-import { bandFor } from "@/lib/scoring";
+import { bandFor, categoryDetail, type BandId } from "@/lib/scoring";
+import type { CategoryId } from "@/lib/questions";
 
 export const runtime = "nodejs";
 
@@ -43,10 +44,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Malformed request." }, { status: 400 });
   }
 
-  const { email, score, newsletter } = (body ?? {}) as {
+  const { email, score, newsletter, topCategory, topBand } = (body ?? {}) as {
     email?: unknown;
     score?: unknown;
     newsletter?: unknown;
+    topCategory?: unknown;
+    topBand?: unknown;
   };
 
   if (typeof email !== "string" || !EMAIL.test(email.trim())) {
@@ -60,11 +63,28 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid score." }, { status: 400 });
   }
 
+  // The browser names the heaviest category; the copy that goes with it comes
+  // from our own tables, never from the request body.
+  const detail =
+    typeof topCategory === "string" && typeof topBand === "string"
+      ? categoryDetail(topCategory as CategoryId, topBand as BandId)
+      : null;
+
+  if (!detail) {
+    return NextResponse.json(
+      { error: "Invalid category." },
+      { status: 400 }
+    );
+  }
+
   const result = await subscribe({
     email: email.trim().toLowerCase(),
     score: Math.round(score),
     band: bandFor(score),
     newsletter: newsletter === true,
+    topCategory: detail.label,
+    topReading: detail.reading,
+    topStep: detail.firstStep,
   });
 
   if (!result.ok) {

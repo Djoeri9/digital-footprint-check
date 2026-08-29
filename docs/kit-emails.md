@@ -11,6 +11,9 @@ Merge fields available on every subscriber the tool creates:
 
 - `{{ subscriber.footprint_score }}` — a number, 0–100
 - `{{ subscriber.footprint_band }}` — `light`, `moderate`, `substantial` or `wide`
+- `{{ subscriber.footprint_top_category }}` — their heaviest category, e.g. `Identifiers & tracking`
+- `{{ subscriber.footprint_top_reading }}` — the paragraph explaining that category at their level
+- `{{ subscriber.footprint_top_step }}` — the one concrete first step for it
 
 Kit's liquid syntax. If a field is ever empty the line still sends, so keep
 sentences readable without the number where you can.
@@ -20,11 +23,11 @@ sentences readable without the number where you can.
 ## 1. The report email
 
 **Trigger:** tag `footprint-tool` added
-**Send:** immediately
+**Send:** immediately, every day of the week
 
 **Subject:** Your footprint check: {{ subscriber.footprint_score }} out of 100
 
-**Preview text:** The four categories, and where yours is thickest.
+**Preview text:** Your heaviest category, and the one change worth making first.
 
 ---
 
@@ -33,24 +36,29 @@ Hi,
 You scored **{{ subscriber.footprint_score }} out of 100** on the digital
 footprint check — {{ subscriber.footprint_band }} exposure.
 
-Here is what that number is, so you can hold it at the right weight: it is an
+The number is the least interesting part, so here is the useful bit.
+
+**Your heaviest category: {{ subscriber.footprint_top_category }}**
+
+{{ subscriber.footprint_top_reading }}
+
+**One first step**
+
+{{ subscriber.footprint_top_step }}
+
+That is deliberately one thing rather than a list. A single change you actually
+make beats nine you read about, and this is the one that moves your number
+most.
+
+A word on what the score is, so you hold it at the right weight: it is an
 estimate built from twelve answers about your habits. It has not looked
-anything up, and it cannot see your accounts. Two people with the same score
-can be in quite different situations.
+anything up and it cannot see your accounts. Two people with the same score can
+be in quite different situations. What it does reliably is rank your own four
+categories — social presence, location trail, identifiers and tracking,
+accounts and spending — against each other.
 
-What it is good at is ranking your own four categories against each other:
-
-- **Social presence** — how much of your week is published under your name
-- **Location trail** — how many apps hold a record of where you have been
-- **Identifiers & tracking** — how easily one email address joins your accounts
-- **Accounts & spending** — how far a single old leak could travel
-
-The category at the top of your results page is where a small change buys you
-the most. Not the one you would guess, usually.
-
-If you want to see the breakdown again, take the check a second time — it runs
-entirely in your browser, so nothing was stored on our side except this address
-and the number above.
+Nothing was stored on our side except this address, the number, and which
+category came top. Your individual answers never left your browser.
 
 — Joeri
 
@@ -59,6 +67,41 @@ the everyday defaults got set, who they pay, and how to take part in less of it
 without leaving modern life. [Starve The Machine](AMAZON_URL_HERE).
 
 ---
+
+## 1b. The thirty-day retake
+
+Same sequence as the report, second email, **30 days** after the first. Goes to
+everyone with the `footprint-tool` tag, opt-in or not — it is about their own
+result, not marketing.
+
+**Subject:** A month on: has your number moved?
+
+**Preview text:** The check takes three minutes. Second time is more interesting.
+
+---
+
+Hi,
+
+A month ago you scored {{ subscriber.footprint_score }} out of 100, and your
+heaviest category was {{ subscriber.footprint_top_category }}.
+
+If you made the change we suggested — or any other — the check will show it.
+It takes three minutes and it runs entirely in your browser, same as last time.
+
+**Take it again: SITE_URL_HERE**
+
+Two things worth knowing before you do.
+
+Most people find their number has barely moved, and that is the honest and
+useful result. Exposure is built from defaults, not decisions, so it does not
+drop because you meant well. It drops when a specific setting changes.
+
+And some people find it has gone up. That is not a failure either. It usually
+means a new app, a new account, a form filled in without much thought — which
+is precisely how footprints grow. Noticing it is the whole point of measuring
+twice.
+
+— Joeri
 
 ## 2. The sequence — only for `newsletter-opt-in`
 
@@ -177,4 +220,5 @@ Kit puts it in the footer and will not let you send without one. A PO box or a
 virtual mailbox is fine and is the normal answer for authors who would rather
 not publish a home address.
 
-Replace `AMAZON_URL_HERE` in both places once the listing is live.
+Replace `AMAZON_URL_HERE` in both places once the listing is live, and
+`SITE_URL_HERE` in the retake email with the live address of the tool.

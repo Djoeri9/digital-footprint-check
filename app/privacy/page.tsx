@@ -47,8 +47,8 @@ export default function PrivacyPage() {
             <li className="flex gap-3">
               <span className="text-ember-500">·</span>
               <span>
-                If you give us your email address, we store your address and
-                your score. Nothing else.
+                If you give us your email address, we store your address, your
+                score and your heaviest category. Nothing else.
               </span>
             </li>
           ) : (
@@ -91,10 +91,11 @@ export default function PrivacyPage() {
               If you ask for your report by email
             </h2>
             <p className="text-ash-200 leading-relaxed">
-              We store two things: the email address you typed and the score the
-              tool calculated. Not your individual answers, not your IP address,
-              not your device. They sit with Kit, the company that sends the
-              mail on our behalf, and go nowhere else.
+              We store three things: the email address you typed, the score the
+              tool calculated, and which of the four categories came out
+              heaviest. Not your individual answers, not your IP address, not
+              your device. They sit with Kit, the company that sends the mail
+              on our behalf, and go nowhere else.
             </p>
             <p className="text-ash-200 leading-relaxed">
               We keep them until you unsubscribe or ask us to delete them,
