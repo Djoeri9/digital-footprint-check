@@ -93,7 +93,13 @@ export default function PrivacyPage() {
             <p className="text-ash-200 leading-relaxed">
               We store two things: the email address you typed and the score the
               tool calculated. Not your individual answers, not your IP address,
-              not your device.
+              not your device. They sit with Kit, the company that sends the
+              mail on our behalf, and go nowhere else.
+            </p>
+            <p className="text-ash-200 leading-relaxed">
+              We keep them until you unsubscribe or ask us to delete them,
+              whichever comes first. There is no other schedule and no archive
+              behind it: unsubscribing removes you.
             </p>
             <p className="text-ash-200 leading-relaxed">
               Receiving the report and joining the mailing list are separate
@@ -111,14 +117,23 @@ export default function PrivacyPage() {
 
           <section className="mt-12 space-y-4">
             <h2 className="font-display text-xl text-bone">
-              Seeing or deleting what we hold
+              Seeing, moving or deleting what we hold
             </h2>
             <p className="text-ash-200 leading-relaxed">
-              Residents of California, Virginia, Colorado, Connecticut and a
-              growing number of other states have a statutory right to know what
-              is held about them and to have it deleted. We extend both rights
-              to everyone, because maintaining two standards would be more work
-              than honouring the higher one.
+              This site is run from Belgium, so the GDPR applies to what we do
+              with your address regardless of where you live. Residents of
+              California, Virginia, Colorado, Connecticut and a growing number
+              of other US states have comparable rights under their own laws.
+              We apply the same standard to everyone, because maintaining two
+              would be more work than honouring the higher one.
+            </p>
+            <p className="text-ash-200 leading-relaxed">
+              You can ask us to show you what we hold, correct it, hand it to
+              you in a portable form, or delete it. You can withdraw your
+              consent to the mailing list at any time, and doing so does not
+              affect anything we sent before. Our legal basis is your consent:
+              you asked for the report, and the mailing list was a separate
+              tick.
             </p>
             <p className="text-ash-200 leading-relaxed">
               Email{" "}
@@ -167,12 +182,28 @@ export default function PrivacyPage() {
       </section>
 
       <section className="mt-12 space-y-4">
-        <h2 className="font-display text-xl text-bone">Where this applies</h2>
+        <h2 className="font-display text-xl text-bone">
+          Who is responsible for this
+        </h2>
+        <p className="text-ash-200 leading-relaxed">
+          {SITE.author}, writing from Belgium, is the data controller. Reach us
+          at{" "}
+          <a
+            href={`mailto:${SITE.contactEmail}`}
+            className="text-ember-400 underline underline-offset-4"
+          >
+            {SITE.contactEmail}
+          </a>
+          .
+        </p>
         <p className="text-ash-400 leading-relaxed">
-          The tool is built for readers in the United States and follows US
-          federal and state requirements. Visitors from elsewhere are welcome;
-          if we later market to the EU we will add the further rights the GDPR
-          requires, including data portability and formal erasure procedures.
+          Because the site is run from the EU, the GDPR governs what we do with
+          your data, and it applies whether you are reading this in Ohio or in
+          Ghent. Most of the readers we write for are in the United States, so
+          we also follow CAN-SPAM and the state privacy laws that apply there.
+          Where two rules differ, we follow the stricter one. If you think we
+          have handled your data badly, you can complain to your own data
+          protection authority; in Belgium that is the Gegevensbeschermingsautoriteit.
         </p>
       </section>
 
