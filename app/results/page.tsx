@@ -56,7 +56,7 @@ export default function ResultsPage() {
         </p>
         <Link
           href="/check"
-          className="mt-8 inline-flex items-center rounded-md bg-ember-500 px-5 py-3 font-medium text-ink-950 hover:bg-ember-400 transition-colors"
+          className="mt-8 inline-flex items-center rounded-md bg-acid-500 px-5 py-3 font-medium text-ink-950 hover:bg-acid-400 transition-colors"
         >
           Take the check
         </Link>
@@ -83,11 +83,7 @@ export default function ResultsPage() {
           Your estimate
         </p>
         <div className="mt-8">
-          <ScoreGauge
-            score={result.score}
-            band={result.band}
-            label={BANDS[result.band].label}
-          />
+          <ScoreGauge score={result.score} label={BANDS[result.band].label} />
         </div>
 
         <h1 className="mt-8 font-display text-3xl text-bone text-center">
@@ -170,7 +166,7 @@ export default function ResultsPage() {
         <div className="mt-7 flex flex-wrap items-center gap-5">
           <Link
             href="/about-the-book"
-            className="inline-flex items-center rounded-md bg-ember-500 px-5 py-3 font-medium text-ink-950 hover:bg-ember-400 transition-colors"
+            className="inline-flex items-center rounded-md bg-acid-500 px-5 py-3 font-medium text-ink-950 hover:bg-acid-400 transition-colors"
           >
             About the book
           </Link>

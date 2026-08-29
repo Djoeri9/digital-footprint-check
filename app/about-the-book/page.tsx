@@ -10,11 +10,12 @@ export const metadata: Metadata = {
 export default function BookPage() {
   return (
     <div className="mx-auto w-full max-w-2xl px-5 py-16">
+      <div className="h-[3px] w-24 bg-acid-500 mb-6" aria-hidden />
       <p className="text-sm uppercase tracking-[0.18em] text-ash-500">
         The book behind this tool
       </p>
-      <h1 className="mt-5 font-display text-4xl text-bone">
-        {SITE.bookTitle}
+      <h1 className="mt-5 font-display text-5xl uppercase text-bone">
+        Starve <span className="text-acid-500">The Machine</span>
       </h1>
       <p className="mt-3 text-ash-400">{SITE.author}</p>
 
@@ -42,7 +43,7 @@ export default function BookPage() {
       <div className="mt-10 flex flex-wrap items-center gap-5">
         <a
           href={SITE.amazonUrl}
-          className="inline-flex items-center rounded-md bg-ember-500 px-6 py-3 font-medium text-ink-950 hover:bg-ember-400 transition-colors"
+          className="inline-flex items-center rounded-md bg-acid-500 px-6 py-3 font-medium text-ink-950 hover:bg-acid-400 transition-colors"
         >
           Read it on Amazon
         </a>

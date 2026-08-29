@@ -23,21 +23,21 @@ export default function PrivacyPage() {
         <h2 className="font-display text-xl text-bone">The short version</h2>
         <ul className="space-y-3 text-ash-200 leading-relaxed">
           <li className="flex gap-3">
-            <span className="text-ember-500">·</span>
+            <span className="text-acid-500">·</span>
             <span>
               Your quiz answers stay in your browser tab. They are not sent to a
               server, and they are gone when you close the tab.
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-ember-500">·</span>
+            <span className="text-acid-500">·</span>
             <span>
               There is no Google Analytics, no Meta pixel, no advertising tag and
               no third-party tracker on any page of this site.
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-ember-500">·</span>
+            <span className="text-acid-500">·</span>
             <span>
               We set no cookies. That is also why you were never shown a cookie
               banner.
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
           </li>
           {SITE.emailCaptureEnabled ? (
             <li className="flex gap-3">
-              <span className="text-ember-500">·</span>
+              <span className="text-acid-500">·</span>
               <span>
                 If you give us your email address, we store your address, your
                 score and your heaviest category. Nothing else.
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
             </li>
           ) : (
             <li className="flex gap-3">
-              <span className="text-ember-500">·</span>
+              <span className="text-acid-500">·</span>
               <span>
                 We do not ask for your email address, and there is nowhere on
                 this site to give it to us.
@@ -140,7 +140,7 @@ export default function PrivacyPage() {
               Email{" "}
               <a
                 href={`mailto:${SITE.contactEmail}`}
-                className="text-ember-400 underline underline-offset-4"
+                className="text-acid-400 underline underline-offset-4"
               >
                 {SITE.contactEmail}
               </a>{" "}
@@ -174,7 +174,7 @@ export default function PrivacyPage() {
           believe a child has sent us information, write to{" "}
           <a
             href={`mailto:${SITE.contactEmail}`}
-            className="text-ember-400 underline underline-offset-4"
+            className="text-acid-400 underline underline-offset-4"
           >
             {SITE.contactEmail}
           </a>{" "}
@@ -191,7 +191,7 @@ export default function PrivacyPage() {
           at{" "}
           <a
             href={`mailto:${SITE.contactEmail}`}
-            className="text-ember-400 underline underline-offset-4"
+            className="text-acid-400 underline underline-offset-4"
           >
             {SITE.contactEmail}
           </a>

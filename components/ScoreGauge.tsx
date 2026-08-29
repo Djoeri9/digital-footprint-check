@@ -1,29 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { BandId } from "@/lib/scoring";
 
 /**
  * A quiet arc. It counts up over roughly a second and then stops moving.
- * No pulsing, no colour change mid-animation, no red.
+ * No pulsing, no red, and deliberately the same colour at every band: green is
+ * the book's accent, not a verdict. How exposed you are is said in words.
  */
-const BAND_STROKE: Record<BandId, string> = {
-  light: "#8d959f",
-  moderate: "#c2c8d0",
-  substantial: "#d8a165",
-  wide: "#c2884a",
-};
+const STROKE = "#8cc63f";
+const TRACK = "#272a27";
 
 const RADIUS = 84;
 const CIRCUMFERENCE = Math.PI * RADIUS; // half circle
 
 export function ScoreGauge({
   score,
-  band,
   label,
 }: {
   score: number;
-  band: BandId;
   label: string;
 }) {
   const [shown, setShown] = useState(0);
@@ -64,14 +58,14 @@ export function ScoreGauge({
         <path
           d={`M 16 100 A ${RADIUS} ${RADIUS} 0 0 1 184 100`}
           fill="none"
-          stroke="#2a3039"
+          stroke={TRACK}
           strokeWidth="6"
           strokeLinecap="round"
         />
         <path
           d={`M 16 100 A ${RADIUS} ${RADIUS} 0 0 1 184 100`}
           fill="none"
-          stroke={BAND_STROKE[band]}
+          stroke={STROKE}
           strokeWidth="6"
           strokeLinecap="round"
           strokeDasharray={CIRCUMFERENCE}
@@ -82,7 +76,7 @@ export function ScoreGauge({
           y="88"
           textAnchor="middle"
           className="font-display"
-          fill="#e8eaee"
+          fill="#eceeec"
           fontSize="46"
         >
           {shown}

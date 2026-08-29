@@ -5,6 +5,7 @@ export default function LandingPage() {
   return (
     <div className="mx-auto w-full max-w-3xl px-5">
       <section className="pt-20 pb-16 fade-up">
+        <div className="h-[3px] w-24 bg-acid-500 mb-6" aria-hidden />
         <p className="text-sm uppercase tracking-[0.18em] text-ash-500 mb-6">
           A twelve-question check
         </p>
@@ -27,7 +28,7 @@ export default function LandingPage() {
         <div className="mt-10 flex flex-wrap items-center gap-5">
           <Link
             href="/check"
-            className="inline-flex items-center rounded-md bg-ember-500 px-6 py-3 font-medium text-ink-950 hover:bg-ember-400 transition-colors"
+            className="inline-flex items-center rounded-md bg-acid-500 px-6 py-3 font-medium text-ink-950 hover:bg-acid-400 transition-colors"
           >
             Check your digital footprint
           </Link>
@@ -89,7 +90,7 @@ export default function LandingPage() {
         </div>
         <Link
           href="/check"
-          className="mt-8 inline-flex items-center text-ember-400 hover:text-ember-500 transition-colors"
+          className="mt-8 inline-flex items-center text-acid-400 hover:text-acid-500 transition-colors"
         >
           Start the check →
         </Link>

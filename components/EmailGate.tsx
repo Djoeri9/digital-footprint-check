@@ -84,7 +84,7 @@ export function EmailGate({ score, topCategory, topBand, onDone }: Props) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
-            className="w-full rounded-lg border border-ink-700 bg-ink-900 px-4 py-3 text-bone placeholder:text-ash-600 focus:border-ember-500 focus:outline-none"
+            className="w-full rounded-lg border border-ink-700 bg-ink-900 px-4 py-3 text-bone placeholder:text-ash-600 focus:border-acid-500 focus:outline-none"
           />
         </div>
 
@@ -93,7 +93,7 @@ export function EmailGate({ score, topCategory, topBand, onDone }: Props) {
             type="checkbox"
             checked={newsletter}
             onChange={(e) => setNewsletter(e.target.checked)}
-            className="mt-1 h-4 w-4 shrink-0 accent-ember-500"
+            className="mt-1 h-4 w-4 shrink-0 accent-acid-500"
           />
           <span className="text-sm text-ash-200 leading-relaxed">
             Also send me occasional letters about {SITE.bookTitle}: what the
@@ -106,7 +106,7 @@ export function EmailGate({ score, topCategory, topBand, onDone }: Props) {
         </label>
 
         {message && (
-          <p className="text-sm text-ember-400" role="status">
+          <p className="text-sm text-acid-400" role="status">
             {message}
           </p>
         )}
@@ -115,7 +115,7 @@ export function EmailGate({ score, topCategory, topBand, onDone }: Props) {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="inline-flex items-center rounded-md bg-ember-500 px-6 py-3 font-medium text-ink-950 hover:bg-ember-400 disabled:opacity-60 transition-colors"
+            className="inline-flex items-center rounded-md bg-acid-500 px-6 py-3 font-medium text-ink-950 hover:bg-acid-400 disabled:opacity-60 transition-colors"
           >
             {status === "sending" ? "Sending…" : "Send my report"}
           </button>

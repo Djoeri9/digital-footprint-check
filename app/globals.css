@@ -1,25 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  /* Charcoal / cool grey / soft white, with one warm accent. Nothing else. */
-  --color-ink-950: #0f1114;
-  --color-ink-900: #14171b;
-  --color-ink-850: #191d22;
-  --color-ink-800: #1e232a;
-  --color-ink-700: #2a3039;
-  --color-ash-600: #565e69;
-  --color-ash-500: #6f7883;
-  --color-ash-400: #8d959f;
-  --color-ash-200: #c2c8d0;
-  --color-bone: #e8eaee;
-  --color-ember-600: #a9743c;
-  --color-ember-500: #c2884a;
-  --color-ember-400: #d8a165;
+  /*
+   * Taken from the book cover: black, acid green, off-white. The cover uses
+   * them at full volume; the tool uses the same palette quietly. Green is the
+   * brand accent, never a severity signal — a high score is not "red" here.
+   */
+  --color-ink-950: #0a0a0a;
+  --color-ink-900: #101110;
+  --color-ink-850: #151715;
+  --color-ink-800: #1b1d1b;
+  --color-ink-700: #272a27;
+  --color-ash-600: #565a56;
+  --color-ash-500: #6e736e;
+  --color-ash-400: #8d928d;
+  --color-ash-200: #c3c7c3;
+  --color-bone: #eceeec;
+  --color-acid-600: #6d9c2c;
+  --color-acid-500: #8cc63f;
+  --color-acid-400: #a6dc5c;
 
-  --font-display: Iowan Old Style, Palatino Linotype, Palatino, Georgia,
-    "Times New Roman", serif;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  --font-display: var(--font-anton), Impact, "Haettenschweiler",
+    "Arial Narrow Bold", sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 @layer base {
@@ -35,13 +39,21 @@
     line-height: 1.6;
   }
 
+  /* The cover's display face is heavy and condensed. Loosen the tracking a
+     little so headings read as calm rather than shouted. */
+  .font-display {
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+    font-weight: 400;
+  }
+
   ::selection {
-    background-color: var(--color-ember-600);
+    background-color: var(--color-acid-500);
     color: var(--color-ink-950);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-ember-400);
+    outline: 2px solid var(--color-acid-500);
     outline-offset: 2px;
   }
 }

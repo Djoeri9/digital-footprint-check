@@ -19,9 +19,9 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#0f1114",
+          backgroundColor: "#0a0a0a",
           padding: "72px 80px",
-          color: "#e8eaee",
+          color: "#eceeec",
         }}
       >
         <div
@@ -30,14 +30,14 @@ export default function OpengraphImage() {
             fontSize: 22,
             letterSpacing: 4,
             textTransform: "uppercase",
-            color: "#8d959f",
+            color: "#8d928d",
           }}
         >
           A twelve-question check
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-          <div style={{ display: "flex", width: 96, height: 4, backgroundColor: "#c2884a" }} />
+          <div style={{ display: "flex", width: 96, height: 4, backgroundColor: "#8cc63f" }} />
           <div style={{ display: "flex", fontSize: 68, lineHeight: 1.15, maxWidth: 940 }}>
             You know roughly what you share. Most people are off by a category
             or two.
@@ -49,7 +49,7 @@ export default function OpengraphImage() {
             display: "flex",
             justifyContent: "space-between",
             fontSize: 24,
-            color: "#8d959f",
+            color: "#8d928d",
           }}
         >
           <div style={{ display: "flex" }}>Digital Footprint Check</div>

@@ -1,7 +1,27 @@
 import type { Metadata } from "next";
+import { Anton, Inter } from "next/font/google";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import "./globals.css";
+
+/**
+ * Anton is the closest widely available face to the cover's condensed display
+ * type. It is used sparingly: the wordmark, page titles and the score. Body
+ * text stays in a neutral sans, because the cover face is unreadable at
+ * paragraph length.
+ */
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-anton",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const description =
   "A short, calm questionnaire that estimates how much of you is readable online. Runs entirely in your browser. From the author of Starve The Machine.";
@@ -34,13 +54,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${anton.variable} ${inter.variable}`}>
       <body className="min-h-screen flex flex-col">
         <header className="border-b border-ink-700">
           <div className="mx-auto w-full max-w-3xl px-5 h-16 flex items-center justify-between">
             <Link
               href="/"
-              className="font-display text-lg tracking-tight text-bone hover:text-ember-400 transition-colors"
+              className="font-display text-xl uppercase text-bone hover:text-acid-400 transition-colors"
             >
               Digital Footprint Check
             </Link>
@@ -62,7 +82,7 @@ export default function RootLayout({
               anywhere, and nothing on this site tracks you.{" "}
               <Link
                 href="/privacy"
-                className="text-ash-200 underline underline-offset-4 decoration-ink-700 hover:decoration-ember-500"
+                className="text-ash-200 underline underline-offset-4 decoration-ink-700 hover:decoration-acid-500"
               >
                 How this tool handles your data
               </Link>

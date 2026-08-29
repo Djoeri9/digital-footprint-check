@@ -69,7 +69,7 @@ export default function CheckPage() {
         aria-label="Progress through the check"
       >
         <div
-          className="h-px bg-ember-500 transition-[width] duration-500 ease-out"
+          className="h-px bg-acid-500 transition-[width] duration-500 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -94,7 +94,7 @@ export default function CheckPage() {
                 className={[
                   "w-full text-left rounded-lg border px-5 py-4 transition-colors",
                   selected
-                    ? "border-ember-500 bg-ink-800 text-bone"
+                    ? "border-acid-500 bg-ink-800 text-bone"
                     : "border-ink-700 bg-ink-900 text-ash-200 hover:border-ash-600 hover:text-bone",
                 ].join(" ")}
               >
