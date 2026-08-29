@@ -33,7 +33,7 @@ export default function LandingPage() {
             Check your digital footprint
           </Link>
           <span className="text-sm text-ash-500">
-            Takes about three minutes.
+            Twelve taps, under two minutes.
           </span>
         </div>
       </section>

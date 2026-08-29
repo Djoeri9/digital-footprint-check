@@ -76,7 +76,7 @@ result, not marketing.
 
 **Subject:** A month on: has your number moved?
 
-**Preview text:** The check takes three minutes. Second time is more interesting.
+**Preview text:** Under two minutes. The second time is the interesting one.
 
 ---
 
@@ -86,7 +86,8 @@ A month ago you scored {{ subscriber.footprint_score }} out of 100, and your
 heaviest category was {{ subscriber.footprint_top_category }}.
 
 If you made the change we suggested — or any other — the check will show it.
-It takes three minutes and it runs entirely in your browser, same as last time.
+It takes under two minutes and it runs entirely in your browser, same as
+last time.
 
 **Take it again: SITE_URL_HERE**
 
