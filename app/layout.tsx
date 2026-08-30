@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Anton, Inter } from "next/font/google";
 import Link from "next/link";
+import { Analytics } from "@/components/Analytics";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -75,11 +76,13 @@ export default function RootLayout({
 
         <main className="flex-1">{children}</main>
 
+        <Analytics />
+
         <footer className="border-t border-ink-700 mt-24">
           <div className="mx-auto w-full max-w-3xl px-5 py-10 text-sm text-ash-500 space-y-4">
             <p className="max-w-prose">
               This tool runs in your browser. Your answers are not sent
-              anywhere, and nothing on this site tracks you.{" "}
+              anywhere, and no third party watches you here.{" "}
               <Link
                 href="/privacy"
                 className="text-ash-200 underline underline-offset-4 decoration-ink-700 hover:decoration-acid-500"

@@ -54,12 +54,18 @@ export default function BookPage() {
       </div>
 
       <div className="mt-10 flex flex-wrap items-center gap-5">
-        <a
-          href={SITE.amazonUrl}
-          className="inline-flex items-center rounded-md bg-acid-500 px-6 py-3 font-medium text-ink-950 hover:bg-acid-400 transition-colors"
-        >
-          Read it on Amazon
-        </a>
+        {SITE.amazonUrl.includes("PLACEHOLDER") ? (
+          <span className="inline-flex items-center rounded-md border border-ink-700 px-6 py-3 text-ash-400">
+            Publishing shortly
+          </span>
+        ) : (
+          <a
+            href={SITE.amazonUrl}
+            className="inline-flex items-center rounded-md bg-acid-500 px-6 py-3 font-medium text-ink-950 hover:bg-acid-400 transition-colors"
+          >
+            Read it on Amazon
+          </a>
+        )}
         <Link
           href="/check"
           className="text-sm text-ash-400 hover:text-bone transition-colors"

@@ -13,8 +13,20 @@ export const SITE = {
    */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3100",
 
-  // TODO(phase 5): replace with the live Amazon US listing.
+  // The live Amazon US listing. While it still reads PLACEHOLDER the buy
+  // button hides itself rather than sending anyone to a dead page.
   amazonUrl: "https://www.amazon.com/dp/PLACEHOLDER",
+
+  /**
+   * Self-hosted Umami. Both values must be set for the script to render, so a
+   * missing configuration means no script at all rather than a broken one.
+   * First-party and cookieless by design: see the privacy page, which changes
+   * its wording when this is switched on.
+   */
+  analytics: {
+    scriptUrl: process.env.NEXT_PUBLIC_UMAMI_URL ?? "",
+    websiteId: process.env.NEXT_PUBLIC_UMAMI_ID ?? "",
+  },
 
   /**
    * Receives access and deletion requests. Personal for now, deliberately:

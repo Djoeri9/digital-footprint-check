@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { analyticsEnabled } from "@/components/Analytics";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -34,6 +35,9 @@ export default function PrivacyPage() {
             <span>
               There is no Google Analytics, no Meta pixel, no advertising tag and
               no third-party tracker on any page of this site.
+              {analyticsEnabled
+                ? " We do count visits, on our own server, without cookies."
+                : ""}
             </span>
           </li>
           <li className="flex gap-3">
@@ -162,6 +166,27 @@ export default function PrivacyPage() {
             opted into the mailing list. We show which breaches an address
             appeared in and what categories of data were exposed. We never
             display leaked passwords or leaked data itself.
+          </p>
+        </section>
+      )}
+
+      {analyticsEnabled && (
+        <section className="mt-12 space-y-4">
+          <h2 className="font-display text-xl text-bone">
+            How we count visitors
+          </h2>
+          <p className="text-ash-200 leading-relaxed">
+            We run Umami on a machine we own. It records that a page was
+            viewed, roughly where in the world from, and which site sent you.
+            It sets no cookies, assigns you no identifier, and cannot follow
+            you to any other website. Nothing it collects reaches a third
+            party, because there is no third party involved.
+          </p>
+          <p className="text-ash-400 leading-relaxed">
+            We use it for one thing: seeing which of the twelve questions
+            people stop at, so the check can be made shorter where it deserves
+            to be. Writing about surveillance while running someone else&apos;s
+            analytics would have been the easier choice and the wrong one.
           </p>
         </section>
       )}
