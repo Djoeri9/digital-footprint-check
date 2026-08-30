@@ -29,11 +29,11 @@ export const SITE = {
   },
 
   /**
-   * Receives access and deletion requests. Personal for now, deliberately:
-   * a working address beats a tidy one that nobody reads. Swap for
-   * privacy@<domain> once the domain exists.
+   * Receives access and deletion requests. Routed to a real inbox that gets
+   * read: a rights request has to arrive somewhere, and keeping it separate
+   * from newsletter replies means it will not be lost among them.
    */
-  contactEmail: "djoeri9@hotmail.com",
+  contactEmail: "privacy@joerihostyn.com",
 
   /**
    * Phase 4 turns this on together with the ESP integration. While it is false
