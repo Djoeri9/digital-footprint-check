@@ -64,7 +64,7 @@ category came top. Your individual answers never left your browser.
 
 P.S. The check is a rough map. The book behind it explains the terrain: how
 the everyday defaults got set, who they pay, and how to take part in less of it
-without leaving modern life. [Starve The Machine](AMAZON_URL_HERE).
+without leaving modern life. [Starve The Machine](https://www.amazon.com/dp/B0H8PNQL18).
 
 ---
 
@@ -204,7 +204,7 @@ That is what I wrote the book about. Not a list of software to install — an
 explanation of what the collecting is for, who pays for it, and why reducing
 your supply degrades the profile more than any single tool does.
 
-[Starve The Machine](AMAZON_URL_HERE) — it is short, and it is not written to
+[Starve The Machine](https://www.amazon.com/dp/B0H8PNQL18) — it is short, and it is not written to
 frighten you.
 
 If it isn't for you, no harm done. These letters keep coming either way, about
@@ -221,5 +221,4 @@ Kit puts it in the footer and will not let you send without one. A PO box or a
 virtual mailbox is fine and is the normal answer for authors who would rather
 not publish a home address.
 
-Replace `AMAZON_URL_HERE` in both places once the listing is live, and
-`SITE_URL_HERE` in the retake email with the live address of the tool.
+Replace `SITE_URL_HERE` in the retake email with the live address of the tool.

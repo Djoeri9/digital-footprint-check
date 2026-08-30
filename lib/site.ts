@@ -15,7 +15,7 @@ export const SITE = {
 
   // The live Amazon US listing. While it still reads PLACEHOLDER the buy
   // button hides itself rather than sending anyone to a dead page.
-  amazonUrl: "https://www.amazon.com/dp/PLACEHOLDER",
+  amazonUrl: "https://www.amazon.com/dp/B0H8PNQL18",
 
   /**
    * Self-hosted Umami. Both values must be set for the script to render, so a
